@@ -4,28 +4,96 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style> .task {
-        background-color: blue;
-    }</style>
+    <style>
+    tocScrollbar::-webkit-scrollbar {
+        display: none;
+    }
+
+    .task-list::-webkit-scrollbar {
+        display: block;
+        width: 3px;
+    }
+
+    .task-list::-webkit-scrollbar-thumb {
+        box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 100px;
+    }
+
+    .task-list {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .task-list:hover {
+        -ms-overflow-style: auto;
+        scrollbar-width: auto;
+    }
+
+    </style>
 </head>
 <body class="flex justify-center items-center">
 <div class="flex flex-col flex-wrap justify-center items-center">
     <div class="header">
         <h1 class="text-4xl m-12">Tasks</h1>
     </div>
-    <div class="main-content">
-        <div class="flex justify-between active-task bg-green-300 rounded-xl p-8 my-12 border-slate-500 border-0">
+    <div class="main-content relative ">
+        <div class="sticky flex justify-between active-task bg-green-300 rounded-xl p-8 my-12 border-slate-500 border-0">
             <h2>Taskname 1</h2>
             <button class="bg-red-300 p-2 rounded-full">Stop</button>
         </div>
-        <div class="task-list flex flex-col space-y-4 w-96">
+        <div class="task-list flex flex-col space-y-4 w-96 h-[50vh] overflow-auto">
             <div class="flex justify-between task bg-sky-100 border-slate-500 border-0 rounded-xl p-8">
+                <div>
+                <h2>Taskname 1</h2>
+                <p class="">Time Total</p>
+                </div>
+                <p class="">Time</p>
+                <button class="bg-green-300 p-2 rounded-full">Start</button>
+            </div>
+            <div class="flex justify-between task bg-sky-100 border-slate-500 border-0 rounded-xl p-8">
+                <h2>Taskname 1</h2>
+                <button class="bg-green-300 p-2 rounded-full">Start</button>
+            </div>
+            <div class="flex justify-between task bg-sky-100 border-slate-500 border-0 rounded-xl p-8">
+                <h2>Taskname 1</h2>
+                <button class="bg-green-300 p-2 rounded-full">Start</button>
+            </div>            <div class="flex justify-between task bg-sky-100 border-slate-500 border-0 rounded-xl p-8">
+                <h2>Taskname 1</h2>
+                <button class="bg-green-300 p-2 rounded-full">Start</button>
+            </div>            <div class="flex justify-between task bg-sky-100 border-slate-500 border-0 rounded-xl p-8">
+                <h2>Taskname 1</h2>
+                <button class="bg-green-300 p-2 rounded-full">Start</button>
+            </div>            <div class="flex justify-between task bg-sky-100 border-slate-500 border-0 rounded-xl p-8">
+                <h2>Taskname 1</h2>
+                <button class="bg-green-300 p-2 rounded-full">Start</button>
+            </div>            <div class="flex justify-between task bg-sky-100 border-slate-500 border-0 rounded-xl p-8">
+                <h2>Taskname 1</h2>
+                <button class="bg-green-300 p-2 rounded-full">Start</button>
+            </div>            <div class="flex justify-between task bg-sky-100 border-slate-500 border-0 rounded-xl p-8">
+                <h2>Taskname 1</h2>
+                <button class="bg-green-300 p-2 rounded-full">Start</button>
+            </div>            <div class="flex justify-between task bg-sky-100 border-slate-500 border-0 rounded-xl p-8">
+                <h2>Taskname 1</h2>
+                <button class="bg-green-300 p-2 rounded-full">Start</button>
+            </div>            <div class="flex justify-between task bg-sky-100 border-slate-500 border-0 rounded-xl p-8">
+                <h2>Taskname 1</h2>
+                <button class="bg-green-300 p-2 rounded-full">Start</button>
+            </div>            <div class="flex justify-between task bg-sky-100 border-slate-500 border-0 rounded-xl p-8">
+                <h2>Taskname 1</h2>
+                <button class="bg-green-300 p-2 rounded-full">Start</button>
+            </div>            <div class="flex justify-between task bg-sky-100 border-slate-500 border-0 rounded-xl p-8">
+                <h2>Taskname 1</h2>
+                <button class="bg-green-300 p-2 rounded-full">Start</button>
+            </div>            <div class="flex justify-between task bg-sky-100 border-slate-500 border-0 rounded-xl p-8">
+                <h2>Taskname 1</h2>
+                <button class="bg-green-300 p-2 rounded-full">Start</button>
+            </div>            <div class="flex justify-between task bg-sky-100 border-slate-500 border-0 rounded-xl p-8">
                 <h2>Taskname 1</h2>
                 <button class="bg-green-300 p-2 rounded-full">Start</button>
             </div>
         </div>
     </div>
-    <button class="absolute bottom-20 right-20 rounded-full bg-gray-600 h-32 w-32">Create</button>
+    <button class="fixed bottom-20 right-20 rounded-full bg-gray-600 h-32 w-32">Create</button>
 </div>
 </body>
 </html>
