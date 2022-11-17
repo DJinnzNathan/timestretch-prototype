@@ -2,23 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Task</title>
+    <style> .task {
+        background-color: blue;
+    }</style>
 </head>
-<body>
-    <header class="flex justify-center">
-        <h1>Tasks</h1>
-    </header>
-    <div class="flex justify-center main-content">
-        <div class="flex-row container-md justify-space-around w-2/3 h-40 items-center bg-neutral-200 active-task flex border-2 border-black rounded-xl">
-            <div class="basis-1/2">Aktiver Task</div>
-            <div class="basis-1/4">00:15:37</div>
-            <div class="basis-1/4">
-                <button>Stop</button>
+<body class="flex justify-center items-center">
+<div class="flex flex-col flex-wrap justify-center items-center">
+    <div class="header">
+        <h1 class="text-4xl m-12">Tasks</h1>
+    </div>
+    <div class="main-content">
+        <div class="flex justify-between active-task bg-green-300 rounded-xl p-8 my-12 border-slate-500 border-0">
+            <h2>Taskname 1</h2>
+            <button class="bg-red-300 p-2 rounded-full">Stop</button>
+        </div>
+        <div class="task-list flex flex-col space-y-4 w-96">
+            <div class="flex justify-between task bg-sky-100 border-slate-500 border-0 rounded-xl p-8">
+                <h2>Taskname 1</h2>
+                <button class="bg-green-300 p-2 rounded-full">Start</button>
             </div>
         </div>
     </div>
+    <button class="absolute bottom-20 right-20 rounded-full bg-gray-600 h-32 w-32">Create</button>
+</div>
 </body>
 </html>
