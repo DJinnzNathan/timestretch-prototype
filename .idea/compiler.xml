@@ -6,8 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="time_stretch" />
+        <module name="timestretch-prototype" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="time_stretch" target="17" />
+      <module name="timestretch-prototype" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
