@@ -1,42 +1,30 @@
 package org.example.model;
 
-        import java.sql.Connection;
-        import java.sql.ResultSet;
-        import java.sql.SQLException;
-        import java.sql.Statement;
-        import java.util.ArrayList;
-        import java.util.List;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.TypedQuery;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Repository {
+    private EntityManagerFactory emf;
 
-    private static Repository _INSTANCE;
-    private ConnectionPool pool;
 
-    private Repository() throws SQLException {
-        pool = ConnectionPool.getInstance();
-    }
-
-    public static Repository getInstance() throws SQLException {
-        if(_INSTANCE == null) {
-            _INSTANCE = new Repository();
-        }
-        return _INSTANCE;
+    public Repository(EntityManagerFactory emf) {
+        this.emf = emf;
     }
 
     public List<Task> findAll() throws SQLException {
-        Connection con = pool.borrow();
-        Statement stmt = con.createStatement();
-        ResultSet rs = stmt.executeQuery("select t.task_name" +
-                "from tasks t " +
-                "left outer join protocol p on p.task_id = t.task_id");
-        List<Task> tasks = new ArrayList<>();
-        while (rs.next()) {
-            Task task = new Task(rs.getString("TASK_NAME"));
-            tasks.add(task);
-        }
-        rs.close();
-        stmt.close();
-        pool.release(con);
-        return tasks;
+        EntityManager em = emf.createEntityManager();
+        TypedQuery<Task> q = em.createQuery("select t from Task t", Task.class);
+        List<Task> emps = q.getResultList();
+        em.close();
+        return emps;
     }
+
 }

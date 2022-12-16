@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Date;
+
 @Entity
+@Table(name = "protocols")
 public class Protocol {
     @Id
     private Integer id;

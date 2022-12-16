@@ -9,14 +9,14 @@
         <class>org.example.model.Task</class>
         <class>org.example.model.Protocol</class>
         <properties>
-            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://pgdb.wannaco.de:4711/u2" />
-            <property name="javax.persistence.jdbc.user" value="u2" />
-            <property name="javax.persistence.jdbc.password" value="s2isQuanxsQWü" />
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://pgdb.wannaco.de:4711/u2"/>
+            <property name="javax.persistence.jdbc.user" value="u2"/>
+            <property name="javax.persistence.jdbc.password" value="s2isQuanxsQWü"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
-            <property name="hibernate.show_sql" value="true" />
-            <property name="hibernate.hbm2ddl.auto" value="update" />
-<!--            <property name="hibernate.default_schema" value="timestretch"/>-->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.hbm2ddl.auto" value="update"/>
+            <property name="hibernate.default_schema" value="timestretch"/>
         </properties>
     </persistence-unit>
 </persistence>

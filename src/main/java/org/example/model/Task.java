@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="TASKS")
+@Table(name = "tasks")
 public class Task {
     @Id
     @Column(name = "TASK_ID")
