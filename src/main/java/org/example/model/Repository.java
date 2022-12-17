@@ -21,7 +21,7 @@ public class Repository {
 
     public List<Task> findAll() throws SQLException {
         EntityManager em = emf.createEntityManager();
-        TypedQuery<Task> q = em.createQuery("select t from Task t", Task.class);
+        TypedQuery<Task> q = em.createQuery("select e from Task e", Task.class);
         List<Task> emps = q.getResultList();
         em.close();
         return emps;

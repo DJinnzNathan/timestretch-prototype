@@ -20,12 +20,11 @@ public class Controller {
 
     public void listTasks(Context ctx) {
         try {
-            List<Task> emps = repository.findAll();
+            List<Task> ts = repository.findAll();
             if (ctx.headerMap().containsKey("Accept") && ctx.header("Accept").equals("application/json")) {
-
-                ctx.json(emps);
+                ctx.json(ts);
             } else {
-                ctx.render("template.html", Map.of("tasks", emps));
+                ctx.render("template.html", Map.of("tasks", ts));
             }
         } catch (SQLException e) {
             ctx.render(e.getMessage());
